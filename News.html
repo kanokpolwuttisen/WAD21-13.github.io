@@ -5,12 +5,12 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet" media="screen, projection">
     <link href="https://www.sogoodweb.com/Content/Default/Default.css" rel="stylesheet">
-    
+
     <link href="https://www.sogoodweb.com/Content/UC/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="https://www.sogoodweb.com/Content/UC/owl-carousel/animate.css" rel="stylesheet">
     <link href="https://www.sogoodweb.com/Content/UC/owl-carousel/owl.theme.default.css" rel="stylesheet">
@@ -19,18 +19,55 @@
     <link href="https://cdn.sogoodweb.com/Layout/9/layout.min.css" rel="stylesheet">
     <link href="https://cdn.sogoodweb.com/Template/TemplateDefault.min.css" rel="stylesheet">
     <link href="https://cdn.sogoodweb.com/Template/115/template.min.css" rel="stylesheet">
-    
-    
     <link rel="stylesheet" href="costom.css">
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        /* Style the body */
+        body {
+          font-family: Arial;
+          margin: 0;
+        }
+        /* Column container */
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        /* Create two unequal columns that sits next to each other */
+        /* Sidebar/left column */
+        .side {
+          flex: 50%;
+          background-color: #f1f1f1;
+          padding: 20px;
+        }
+        /* Main column */
+        .main {
+          flex: 50%;
+          background-color: white;
+          padding: 20px;
+        }
+        /* Fake image, just for this example */
+        .fakeimg {
+          background-color: #aaa;
+          width: 100%;
+          padding: 20px;
+        }
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+          .row,
+          .navbar {
+            flex-direction: column;
+          }
+        }
+      </style>
 </head>
 
 <body>
-    
 <!-- hearder -->
     <div id="wrapper_header" class="wrapper">
         <header id="header">
@@ -79,6 +116,31 @@
 <!-- -----------------------------------End hearder-------------------------------------- -->
 
 
+<!-- menu text -->
+  <!-- The flexible grid (content) -->
+  <div id="wrapper_section_top" class="wrapper">
+    <div class="section-full-top">
+    <div class="row">
+    <div class="side">
+      <h2> ข่าวสาร Covid-19 </h2>
+    <div class="widget-item-bannerimage">
+        <img src="images/N1.jpg">
+    </div>
+    </div>
+    <div class="main">
+      <h2>อัปเดตสถานการณ์ "โควิด-19"</h2>
+      <p>วันนี้ (31 ส.ค.) ตัวเลขผู้ติดเชื้อโควิด-19 สะสมของประเทศไทย ประจำวันที่ 31 สิงหาคม 2564 ดังนี้
+
+        พบจํานวนผู้ติดเชื้อโควิด-19 รายใหม่ เพิ่มขึ้น 14,666 ราย แบ่งออกเป็นติดเชื้อใหม่ในประเทศ 14,362 ราย ติดเชื้อในเรือนจำ-ที่ต้องขัง 304 ราย มีผู้เสียชีวิตเพิ่ม 190 คน ทำให้จำนวนผู้ติดเชื้อสะสมในช่วงการระบาดระลอกใหม่ตั้งแต่เดือนเมษายน 2564 ตั้งแต่ 1 เมษายน - 31 สิงหาคม 2564 มีจำนวน 1,175,866 ราย เสียชีวิตสะสม 11,495 คน
+        ส่วนผู้ติดเชื้อสะสมนับตั้งแต่เริ่มมีการระบาดเมื่อต้นปี 2563 มีจำนวน 1,204,729 ราย ยอดผู้เสียชีวิตสะสม 11,589 คน ทำให้ประเทศไทยมีจำนวนผู้ติดเชื้อยืนยันสะสมอยู่ในอันดับที่ 29 ของโลก
+
+        ทำให้ยอดผู้หายป่วยจากโควิด-19 ในประเทศ ผู้หายป่วยรายใหม่วันนี้ 19,245 ราย ผู้หายป่วยสะสม 994,346 ราย (ตั้งแต่ 1 เมษายน-31 สิงหาคม 2564) หายป่วยสะสมนับตั้งแต่เริ่มมีการระบาดเมื่อต้นปี 2563 มีจำนวน 1,021,991 ราย ผู้ติดเชื้อที่อยู่ระหว่างการรักษาตัว 171,368 ราย
+
+      </p>
+    </div>
+  </div>
+</div>
+<!------------------------------------ menu text --------------------------------------->
 
 
 
@@ -119,7 +181,6 @@
                                             <i class="fa fa-arrow-circle-o-right"></i>
                                             <a href="Infect.html">จำนวนผู้ติดเชื้อ</a>
                                         </li>
-                                       
                                     </ul>
                                 </div>
                             </section>
@@ -172,8 +233,6 @@
     </footer>
 </div>
 <!-- End Footer -->
-
-
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
