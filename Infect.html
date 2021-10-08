@@ -12,23 +12,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet"
         media="screen, projection">
     <link href="https://www.sogoodweb.com/Content/Default/Default.css" rel="stylesheet">
-
     <link href="https://www.sogoodweb.com/Content/UC/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="https://www.sogoodweb.com/Content/UC/owl-carousel/animate.css" rel="stylesheet">
     <link href="https://www.sogoodweb.com/Content/UC/owl-carousel/owl.theme.default.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-
     <link href="https://cdn.sogoodweb.com/Layout/9/layout.min.css" rel="stylesheet">
     <link href="https://cdn.sogoodweb.com/Template/TemplateDefault.min.css" rel="stylesheet">
     <link href="https://cdn.sogoodweb.com/Template/115/template.min.css" rel="stylesheet">
 
-
     <link rel="stylesheet" href="costom.css">
-
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-
     <style>
         .grid-container {
             display: grid;
@@ -38,7 +33,6 @@
         }
     </style>
 </head>
-
 <body>
 
     <!-- hearder -->
@@ -96,23 +90,116 @@
                 <div data-widget="banner"
                     class="widget widget-f widget-banner widget-banner-f widget-banner-slider widget-banner-f-slider">
                     <div>
+                        <div>
+                            <h2>สถานการณ์ผู้ติดเชื้อ COVID-19 รายพื้นที่</h2>
+                            <p id="show_select" style="font-size: 24px;"></p>
+                            <script>
+                                function show(){
+                                    var e_sel_region = document.getElementById("sel-region").value;
+                                    var e_sel_province = document.getElementById("sel-province").value;
+                                    document.getElementById("show_select").innerHTML = "ภูมิภาค: " + e_sel_region + ", จังหวัด: " + e_sel_province;
+                                }
+                            </script>
+                        </div>
                         <div class="grid-container">
                             <div>
                                 <label for="region">ภูมิภาค:</label>
-                                <select id="region" onchange="myFunction()">
-                                    <option value="เหนือ">เหนือ</option>
-                                    <option value="กลาง">กลาง</option>
-                                    <option value="ใต้">ใต้</option>
-                                    <option value="ตะวันออกเฉียงเหนือ">ตะวันออกเฉียงเหนือ</option>
+                                <select id="sel-region" name="region" class="form-select" aria-label="Region"
+                                    onchange="change_filter_region(this.value); show();">
+                                    <option value="" selected>---เลือกภูมิภาค---</option>
+                                    <option value="กรุงเทพมหานคร และ ปริมณฑล">กรุงเทพมหานคร และ ปริมณฑล</option>
+                                    <option value="ภาคกลาง">ภาคกลาง</option>
+                                    <option value="ภาคเหนือ">ภาคเหนือ</option>
+                                    <option value="ภาคตะวันออกเฉียงเหนือ">ภาคตะวันออกเฉียงเหนือ</option>
+                                    <option value="ภาคตะวันออก">ภาคตะวันออก</option>
+                                    <option value="ภาคตะวันตก">ภาคตะวันตก</option>
+                                    <option value="ภาคใต้">ภาคใต้</option>
+                                    <option value="ไม่ระบุ">ไม่ระบุ</option>
                                 </select>
                             </div>
                             <div>
                                 <label for="country">จังหวัด:</label>
-                                <select id="province" onchange="myFunction()">
-                                    <option value="เลย">เลย</option>
-                                    <option value="สกลนคร">สกลนคร</option>
-                                    <option value="อุดรธานี">อุดรธานี</option>
+                                <select id="sel-province" name="province" class="form-select" aria-label="Province"
+                                    onchange="change_filter_province(this.value); show();">
+                                    <option value="" selected>---เลือกจังหวัด---</option>
+                                    <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+                                    <option value="นนทบุรี">นนทบุรี</option>
+                                    <option value="ปทุมธานี">ปทุมธานี</option>
+                                    <option value="สมุทรปราการ">สมุทรปราการ</option>
+                                    <option value="สมุทรสาคร">สมุทรสาคร</option>
+                                    <option value="นครปฐม">นครปฐม</option>
+                                    <option value="ภูเก็ต">ภูเก็ต</option>
+                                    <option value="กระบี่">กระบี่</option>
+                                    <option value="กาญจนบุรี">กาญจนบุรี</option>
+                                    <option value="กาฬสินธุ์">กาฬสินธุ์</option>
+                                    <option value="กำแพงเพชร">กำแพงเพชร</option>
                                     <option value="ขอนแก่น">ขอนแก่น</option>
+                                    <option value="จันทบุรี">จันทบุรี</option>
+                                    <option value="ฉะเชิงเทรา">ฉะเชิงเทรา</option>
+                                    <option value="ชัยนาท">ชัยนาท</option>
+                                    <option value="ชัยภูมิ">ชัยภูมิ</option>
+                                    <option value="ชุมพร">ชุมพร</option>
+                                    <option value="ชลบุรี">ชลบุรี</option>
+                                    <option value="เชียงใหม่">เชียงใหม่</option>
+                                    <option value="เชียงราย">เชียงราย</option>
+                                    <option value="ตรัง">ตรัง</option>
+                                    <option value="ตราด">ตราด</option>
+                                    <option value="ตาก">ตาก</option>
+                                    <option value="นครนายก">นครนายก</option>
+                                    <option value="นครพนม">นครพนม</option>
+                                    <option value="นครราชสีมา">นครราชสีมา</option>
+                                    <option value="นครศรีธรรมราช">นครศรีธรรมราช</option>
+                                    <option value="นครสวรรค์">นครสวรรค์</option>
+                                    <option value="นราธิวาส">นราธิวาส</option>
+                                    <option value="น่าน">น่าน</option>
+                                    <option value="บึงกาฬ">บึงกาฬ</option>
+                                    <option value="บุรีรัมย์">บุรีรัมย์</option>
+                                    <option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์</option>
+                                    <option value="ปราจีนบุรี">ปราจีนบุรี</option>
+                                    <option value="ปัตตานี">ปัตตานี</option>
+                                    <option value="พะเยา">พะเยา</option>
+                                    <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
+                                    <option value="พังงา">พังงา</option>
+                                    <option value="พิจิตร">พิจิตร</option>
+                                    <option value="พิษณุโลก">พิษณุโลก</option>
+                                    <option value="เพชรบุรี">เพชรบุรี</option>
+                                    <option value="เพชรบูรณ์">เพชรบูรณ์</option>
+                                    <option value="แพร่">แพร่</option>
+                                    <option value="พัทลุง">พัทลุง</option>
+                                    <option value="มหาสารคาม">มหาสารคาม</option>
+                                    <option value="มุกดาหาร">มุกดาหาร</option>
+                                    <option value="แม่ฮ่องสอน">แม่ฮ่องสอน</option>
+                                    <option value="ยโสธร">ยโสธร</option>
+                                    <option value="ยะลา">ยะลา</option>
+                                    <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
+                                    <option value="ระนอง">ระนอง</option>
+                                    <option value="ระยอง">ระยอง</option>
+                                    <option value="ราชบุรี">ราชบุรี</option>
+                                    <option value="ลพบุรี">ลพบุรี</option>
+                                    <option value="ลำปาง">ลำปาง</option>
+                                    <option value="ลำพูน">ลำพูน</option>
+                                    <option value="เลย">เลย</option>
+                                    <option value="ศรีสะเกษ">ศรีสะเกษ</option>
+                                    <option value="สกลนคร">สกลนคร</option>
+                                    <option value="สงขลา">สงขลา</option>
+                                    <option value="สมุทรสงคราม">สมุทรสงคราม</option>
+                                    <option value="สระแก้ว">สระแก้ว</option>
+                                    <option value="สระบุรี">สระบุรี</option>
+                                    <option value="สิงห์บุรี">สิงห์บุรี</option>
+                                    <option value="สุโขทัย">สุโขทัย</option>
+                                    <option value="สุพรรณบุรี">สุพรรณบุรี</option>
+                                    <option value="สุราษฎร์ธานี">สุราษฎร์ธานี</option>
+                                    <option value="สุรินทร์">สุรินทร์</option>
+                                    <option value="สตูล">สตูล</option>
+                                    <option value="หนองคาย">หนองคาย</option>
+                                    <option value="หนองบัวลำภู">หนองบัวลำภู</option>
+                                    <option value="อำนาจเจริญ">อำนาจเจริญ</option>
+                                    <option value="อุดรธานี">อุดรธานี</option>
+                                    <option value="อุตรดิตถ์">อุตรดิตถ์</option>
+                                    <option value="อุทัยธานี">อุทัยธานี</option>
+                                    <option value="อุบลราชธานี">อุบลราชธานี</option>
+                                    <option value="อ่างทอง">อ่างทอง</option>
+                                    <option value="ไม่ระบุ">ไม่ระบุ</option>
                                 </select>
                             </div>
                             <div>
@@ -122,48 +209,35 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="show"></div>
-                        <script>
-                            function myFunction() {
-                                var e_region = document.getElementById("region").value;
-                                var e_province = document.getElementById("province").value;
-                                document.getElementById("show").innerHTML = "ภูมิภาค: " + e_region + ", จังหวัด: " + e_province;
-                            }
-                        </script>
-                        <div class='tableauPlaceholder' id='viz1630679246973' style='position: relative'>
-                            <noscript><a href='https:&#47;&#47;ddc.moph.go.th&#47;covid19-dashboard'><img alt=' '
-                                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SA&#47;SATCOVIDDashboard&#47;1-dash-tiles-w&#47;1_rss.png'
-                                        style='border: none' /></a>
-                            </noscript>
-                            <object class='tableauViz' style='display:none;'>
-                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                <param name='embed_code_version' value='3' />
-                                <param name='site_root' value='' />
-                                <param name='name' value='SATCOVIDDashboard&#47;1-dash-tiles-w' />
-                                <param name='tabs' value='no' />
-                                <param name='toolbar' value='no' />
-                                <param name='static_image'
-                                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SA&#47;SATCOVIDDashboard&#47;1-dash-tiles-w&#47;1.png' />
-                                <param name='animate_transition' value='yes' />
-                                <param name='display_static_image' value='yes' />
-                                <param name='display_spinner' value='yes' />
-                                <param name='display_overlay' value='yes' />
-                                <param name='display_count' value='yes' />
-                            </object>
-                        </div>
-                        <script type='text/javascript'> var divElement = document.getElementById('viz1630679246973');
-                            var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '1200px';
-                            vizElement.style.height = '700px'; var scriptElement = document.createElement('script');
-                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                        </script>
 
+                        <!-- START TABLEAU PLACEHOLDER -->
+                        <div align="center" class="pt-4">
+                            <script type='text/javascript'
+                                src='https://public.tableau.com/javascripts/api/tableau-2.min.js'></script>
+                            <div id='tableauPlaceholder' style='width: 1200px; height: 1050px;'></div>
+                        </div>
+                        <script>
+                            var viz = null;
+                            function initViz() {
+                                var containerDiv = document.getElementById("tableauPlaceholder"),
+                                    url = "https://public.tableau.com/views/SATCOVIDDashboard/2-dash-tiles-province-w",
+                                    options = {
+                                        hideTabs: true,
+                                        hideToolbar: true,
+                                        onFirstInteractive: function () {
+                                            console.log("Finish Calling");
+                                        }
+                                    };
+                                viz = new tableau.Viz(containerDiv, url, options);
+                            }
+                            initViz();
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="js/app.js"></script>
     <!------------------------------------ Mid menu bar --------------------------------------->
 
 

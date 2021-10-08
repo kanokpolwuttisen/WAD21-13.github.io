@@ -4,7 +4,7 @@ $(document).ready(function () {
     // var tzoffset = (new Date()).getTimezoneOffset() * 60000;
     // var today =(new Date(Date.now() - tzoffset)).toISOString().slice(0, 10)
     // console.log(new Date().toISOString());
-    var today =new Date().toISOString().slice(0, 10);
+    var today = new Date().toISOString().slice(0, 10);
     $('#dpick').val(today);
 });
 
@@ -218,6 +218,17 @@ function change_param_wave(val) {
     console.log(val);
     wb = viz.getWorkbook();
     wb.changeParameterValueAsync("param_wave", val);
+}
+
+function change_param_date_range(val) {
+    console.log(val);
+    wb = viz.getWorkbook();
+    wb.changeParameterValueAsync("param_date_range", val);
+
+    if (val !== "") {
+        param_string = "ช่วงเวลาในการวิเคราะห์ : " + val;
+    }
+    $("#param-text").html(param_string);
 }
 
 function change_param_date(val) {
